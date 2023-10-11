@@ -1,0 +1,8 @@
+C:\Users\leandro.dmenezes\source\repos\ExerciciosLeandro\ExerciciosLeandro\bin\Debug\ExerciciosLeandro.exe.config
+C:\Users\leandro.dmenezes\source\repos\ExerciciosLeandro\ExerciciosLeandro\bin\Debug\ExerciciosLeandro.exe
+C:\Users\leandro.dmenezes\source\repos\ExerciciosLeandro\ExerciciosLeandro\bin\Debug\ExerciciosLeandro.pdb
+C:\Users\leandro.dmenezes\source\repos\ExerciciosLeandro\ExerciciosLeandro\obj\Debug\ExerciciosLeandro.csproj.AssemblyReference.cache
+C:\Users\leandro.dmenezes\source\repos\ExerciciosLeandro\ExerciciosLeandro\obj\Debug\ExerciciosLeandro.csproj.SuggestedBindingRedirects.cache
+C:\Users\leandro.dmenezes\source\repos\ExerciciosLeandro\ExerciciosLeandro\obj\Debug\ExerciciosLeandro.csproj.CoreCompileInputs.cache
+C:\Users\leandro.dmenezes\source\repos\ExerciciosLeandro\ExerciciosLeandro\obj\Debug\ExerciciosLeandro.exe
+C:\Users\leandro.dmenezes\source\repos\ExerciciosLeandro\ExerciciosLeandro\obj\Debug\ExerciciosLeandro.pdb
