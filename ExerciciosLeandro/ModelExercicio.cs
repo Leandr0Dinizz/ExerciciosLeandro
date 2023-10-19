@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace ExerciciosLeandro
 {
@@ -49,14 +52,14 @@ namespace ExerciciosLeandro
         public int Comparar(int num1, int num2)
         {
 
-             if (num1 > num2)
-            { 
+            if (num1 > num2)
+            {
                 return num1;
             }
             else
             {
 
-        return num2;
+                return num2;
             }
 
 
@@ -68,25 +71,54 @@ namespace ExerciciosLeandro
         {
 
             return num1 - 1;
-        
+
         }//Fim do antecessor
 
         //Exercício 04
-        public int AreaRetangulo(int num1, int num2)
+        public double AreaRetangulo(double bas, double alt)
         {
 
-            return num1 * num2;
+            return bas * alt;
 
         }//Fim AreaRetangulo
 
         //Exercício 05
-        public double Eleitores(double brancos, double validos, double nulos, double total, double pBrancos, double pNulos);
+        public double PorcentagemVotos(double votos, double total)
+        {
 
-        //validar eleitores 
-   
-         
+            return (votos * 100) / total;
 
 
-    }//Fim classe
+        }//fim do método de porcentagem
 
+        public bool Validar(double num)
+        {
+
+            if (num < 0)
+            {
+                return false;
+            }
+            else
+            {
+
+                return true;
+
+            }
+        }//Fim validação
+
+        //EX 6
+        public double AjusteSalario(double salario, double reajuste)
+        {
+
+            return salario * (reajuste / 100) + salario;
+        }//Fim método
+
+        //EX 7
+        public double CustoFinal(double porc, double custInicial)
+        {
+
+            return custInicial * (porc / 100);
+
+        }//fim método
+    }//Fim do classe
 }//Fim projeto

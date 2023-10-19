@@ -42,6 +42,8 @@ namespace ExerciciosLeandro
                                "4. Exercício 04\n" +
                                "5. Exercício 05\n" +
                                "6. Exercício 06\n" +
+                               "7. Exercício 07\n" +
+                               "8. Exercício 08\n" +
                                "Escolha uma das opções acima: ");
             ConsultarOpcao = Convert.ToInt32(Console.ReadLine());
         }//mostrar menu
@@ -112,55 +114,268 @@ namespace ExerciciosLeandro
                         break;
 
 
-                    case 4:                      
-                        Console.WriteLine("Informe um número");
-                        num1 = Convert.ToInt32(Console.ReadLine());
+                    case 4:
+                        double bas;
+                        double alt;
+                        do
+                        {
+                            Console.WriteLine("Informe a base do retângulo");
+                            bas = Convert.ToInt32(Console.ReadLine());
+                            if (bas < 0)
+                            {
 
-                        Console.WriteLine("Informe o segundo número");
-                        num2 = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine("Erro! Informe um valor positivo!");
+
+                            }
+                        } while (bas < 0);
+
+                        do
+                        {
+
+
+                            Console.WriteLine("Informe a altura do retângulo");
+                            alt = Convert.ToInt32(Console.ReadLine());
+                            if (alt < 0)
+                            {
+
+                                Console.WriteLine("Erro! Informe um valor positivo");
+                            }
+
+                        } while (alt < 0);
+                        //mostrar mensagem na tela
+
 
 
                         //Comparação
-                        Console.WriteLine("A área do retângulo é: " + exercicio.AreaRetangulo(num1, num2));
+                        Console.WriteLine("A área do retângulo é: " + exercicio.AreaRetangulo(bas, alt));
                         break;
 
                     case 5:
-                        Console.WriteLine("Informe o total de eleitores");
-                       double total = Convert.ToDouble(Console.ReadLine());
+                        double totalEleitores;
+                        double validos;
+                        double nulos;
+                        double brancos;
+
+                        //Total eleitores
+                        do
+                        {
+                            Console.WriteLine("Informe o total de eleitores");
+                            totalEleitores = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(totalEleitores) == false)
+                            {
+
+                                Console.WriteLine("Informe um valor positivo!");
+
+                            }
+
+                        } while (exercicio.Validar(totalEleitores) == false);
+
+
+                        //Votos brancos
+                        do
+                        {
+                            Console.WriteLine("Informe o total de votos brancos");
+                            brancos = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(brancos) == false)
+                            {
+
+                                Console.WriteLine("Informe um valor positivo!");
+
+                            }
+
+                        } while (exercicio.Validar(brancos) == false);
+                        //Votos válidos
+                        do
+                        {
+                            Console.WriteLine("Informe o total de votos válidos");
+                            validos = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(validos) == false)
+                            {
+
+                                Console.WriteLine("Informe um valor positivo!");
+
+                            }
+
+                        } while (exercicio.Validar(validos) == false);
+                        //Votos nulos
+                        do
+                        {
+                            Console.WriteLine("Informe o total de votos nulos");
+                            nulos = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(nulos) == false)
+                            {
+
+                                Console.WriteLine("Informe um valor positivo!");
+
+                            }
+
+                        } while (exercicio.Validar(nulos) == false);
+
+
+                        //Fazer o cálculo
+                        if (brancos + validos + nulos == totalEleitores)
+                        {
+
+                            Console.WriteLine("\nHá " + exercicio.PorcentagemVotos(brancos, totalEleitores) + "% de votos brancos"
+                                             + "\nHá " + exercicio.PorcentagemVotos(nulos, totalEleitores) + "% de votos nulos"
+                                             + "\nHá " + exercicio.PorcentagemVotos(validos, totalEleitores) + "% de votos validos");
+                        }
+                        else
+                        {
+                            Console.WriteLine("O total de eleitores é diferente da soma de brancos, validos e nulos.");
+
+                        }
+                        break;
+
+                    case 6:
+                        double salario;
+                        double reajuste;
+                        do
+                        {
+                            Console.WriteLine("Informe um salário");
+                            salario = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(salario) == false)
+                            {
+
+                                Console.WriteLine("Informe um salário positivo!");
+                            }//fim validação
+                        } while (exercicio.Validar(salario) == false);
+
+                        do
+                        {
+                            Console.WriteLine("Informe o porcentual de reajuste: ");
+                            reajuste = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(reajuste) == false)
+
+                            {
+
+
+                                Console.WriteLine("Informe um reajuste positivo! ");
+                            }//Fim validação
+                        } while (exercicio.Validar(reajuste) == false);
 
 
 
+                        Console.WriteLine("O novo salário é: " + exercicio.AjusteSalario(salario, reajuste));
+                        break;
 
-                        Console.WriteLine("Informe o total de votos válidos");
-                        double validos = Convert.ToDouble(Console.ReadLine());
+                    case 7:
+                        double custInicial = 0;
+                        double imp = 0;
+                        double dist = 0;
+                        do
+                        {
+                            Console.WriteLine("Informe valor de fabricação");
+                            salario = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(custInicial) == false)
+                            {
+
+                                Console.WriteLine("Informe um valor positivo!");
+                            }//fim validação
+                        } while (exercicio.Validar(salario) == false);
+
+                        do
+                        {
+                            Console.WriteLine("Informe o imposto");
+                            salario = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(imp) == false)
+                            {
+
+                                Console.WriteLine("Informe um salário positivo!");
+                            }//fim validação
+                        } while (exercicio.Validar(imp) == false);
+
+                        do
+                        {
+                            Console.WriteLine("Informe o custo dstribuidor");
+                            salario = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(dist) == false)
+                            {
+
+                                Console.WriteLine("Informe um salário positivo!");
+                            }//fim validação
+                        } while (exercicio.Validar(dist) == false);
+
+                        //Mostrar
+
+                        Console.WriteLine("O custo final é: R$ " +
+                            (exercicio.CustoFinal(imp, custInicial +
+                            exercicio.CustoFinal(dist, custInicial +
+                            custInicial))));
+                        break;
+
+                    case 8:
+                        double salarioFix;
+                        double totalCarros;
+                        double comissao;
+                        double valorTotal;
+                        do
+                        {
+
+                            Console.WriteLine("Informe salario fixo funcionário");
+                            salarioFix = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(salarioFix) == false)
+                            {
+
+                                Console.WriteLine("Informe um valor positivo");
+                            }
 
 
+                        }while (exercicio.Validar(salarioFix) == false);
+
+                        do
+                        {
+
+                            Console.WriteLine("Informe o valor do veiculo");
+                            totalCarros = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(totalCarros) == false)
+                            {
+
+                                Console.WriteLine("Informe um valor positivo");
+                            }
 
 
-                        Console.WriteLine("Informe o total de votos brancos");
-                        double brancos = Convert.ToDouble(Console.ReadLine());
+                        } while (exercicio.Validar(totalCarros) == false);
+
+                        do
+                        {
+
+                            Console.WriteLine("Informe a comissão");
+                            comissao = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(comissao) == false)
+                            {
+
+                                Console.WriteLine("Informe um valor positivo");
+                            }
 
 
+                        } while (exercicio.Validar(comissao) == false);
+
+                        do
+                        {
+
+                            Console.WriteLine("Infomr valor total de vendas");
+                            valorTotal = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(valorTotal) == false)
+                            {
+
+                                Console.WriteLine("Informe um valor positivo");
+                            }
 
 
-                        Console.WriteLine("Informe o total de votos nulos");
-                        double nulos = Convert.ToDouble(Console.ReadLine());
-                    break;
-
-
+                        } while (exercicio.Validar(valorTotal) == false);
+                        break;
 
                     default:
+
+
                         Console.WriteLine("Opção escolhida não é válida");
                         break;
-                }//fim do escolha
-            } while (ConsultarOpcao != 0);//Fim do while
-                        
-           
-        }//Fim do método
 
+                }
+                }while (ConsultarOpcao != 0) ;
+            
+           }//Fim do método
 
-
-    }//Fim class
-
-
-}//fim projeto
+        }//Fim classe
+     }//fim projeto
