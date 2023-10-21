@@ -44,6 +44,13 @@ namespace ExerciciosLeandro
                                "6. Exercício 06\n" +
                                "7. Exercício 07\n" +
                                "8. Exercício 08\n" +
+                               "9. Exercício 09\n" +
+                               "10. Exercício 10\n" +
+                               "11. Exercício 11\n" +
+                               "12. Exercício 12\n" +
+                               "13. Exercício 13\n" +
+                               "14. Exercício 14\n" +
+                               "15. Exercício 15\n" +
                                "Escolha uma das opções acima: ");
             ConsultarOpcao = Convert.ToInt32(Console.ReadLine());
         }//mostrar menu
@@ -321,7 +328,7 @@ namespace ExerciciosLeandro
                             }
 
 
-                        }while (exercicio.Validar(salarioFix) == false);
+                        } while (exercicio.Validar(salarioFix) == false);
 
                         do
                         {
@@ -354,7 +361,7 @@ namespace ExerciciosLeandro
                         do
                         {
 
-                            Console.WriteLine("Infomr valor total de vendas");
+                            Console.WriteLine("Informe valor total de vendas");
                             valorTotal = Convert.ToDouble(Console.ReadLine());
                             if (exercicio.Validar(valorTotal) == false)
                             {
@@ -364,8 +371,201 @@ namespace ExerciciosLeandro
 
 
                         } while (exercicio.Validar(valorTotal) == false);
+                        Console.WriteLine("O salário total é: " +
+                                         (exercicio.Comissao(totalCarros, comissao) +
+                                          exercicio.TotalComVendas(valorTotal) + salarioFix));
                         break;
 
+                    case 9:
+                        do
+                        {
+                            Console.WriteLine("Informe um número");
+                            num1 = Convert.ToInt32(Console.ReadLine());
+                            if (exercicio.Validar(num1) == false)
+                            {
+
+                                Console.WriteLine("O número é invalido");
+                            }
+                        } while (exercicio.Validar(num1) == false);
+
+                        if (exercicio.Pimp(num1) == 0)
+                        {
+
+                            Console.WriteLine("O número " + num1 + " É PAR ");
+                        }
+                        else
+                        {
+
+                            Console.WriteLine("O número " + num1 + " É IMPÁR ");
+                        }
+                        break;
+
+                    case 10:
+                        int idade;
+                        do
+                        {
+                            Console.WriteLine("Informe sua idade");
+                            idade = Convert.ToInt32(Console.ReadLine());
+                            if (exercicio.Validar(idade) == false)
+                            {
+
+                                Console.WriteLine("Informe um número válido");
+
+
+                            }
+
+                        } while (exercicio.Validar(idade) == false);
+
+                        if (idade >= 18)
+                        {
+
+                            Console.WriteLine("é maior de idade");
+                        }
+                        else
+                        {
+                            Console.WriteLine("é menor de idade");
+
+                        }
+                        break;
+
+                    case 12:
+                        int ano;
+                        do
+                        {
+                            Console.WriteLine("Informe o ano");
+                            ano = Convert.ToInt32(Console.ReadLine());
+                            if (exercicio.Validar(ano) == false)
+                            {
+
+                                Console.WriteLine("O ano  é invalido");
+                            }
+                        } while (exercicio.Validar(ano) == false);
+
+                        if (exercicio.BiAno(ano) == 0)
+                        {
+
+                            Console.WriteLine("É Bissexto");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Não é Bissexto");
+                        }
+                        break;
+
+                    case 13:
+                        double notaa1;
+                        double notaa2;
+                        do
+                        {
+                            Console.WriteLine("Informe a primeira nota: ");
+                            notaa1 = Convert.ToDouble(Console.ReadLine());
+
+                            if (exercicio.validarNotas(notaa1) == true)
+                            {
+                                Console.WriteLine("Informe uma nota entre 0 e 10");
+                            }//fim validação
+                        } while (exercicio.validarNotas(notaa1) == true);//agora o while enxerga a variável
+
+                        do
+                        {
+                            Console.WriteLine("Informe a segunda nota:  ");
+                            notaa2 = Convert.ToDouble(Console.ReadLine());
+
+
+                            if (exercicio.validarNotas(notaa2) == true)
+                            {
+
+                                Console.WriteLine("Informe uma nota entre 0 e 10");
+
+                            }//fim da validação
+                        } while (exercicio.validarNotas(notaa2) == true);
+
+
+                        if (exercicio.NotasAluno(notaa1, notaa2) >= 7)
+                        {
+                            Console.WriteLine("Você está aprovado ");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Você está reprovado");
+                        }
+                        break;
+
+                    case 14:
+                        double medida1;
+                        double medida2;
+                        double medida3;
+                        do
+                        {
+                            Console.WriteLine("Informe a primeira medida:  ");
+                            medida1 = Convert.ToInt32(Console.ReadLine());
+
+                            if (exercicio.Validar(medida1) == false)
+                            {
+
+                                Console.WriteLine("Medida inválida");
+
+                            }
+                        } while (exercicio.Validar(medida1) == false);
+
+                        do
+                        {
+                            Console.WriteLine("Informe a segunda medida:  ");
+                            medida2 = Convert.ToInt32(Console.ReadLine());
+
+
+                            if (exercicio.Validar(medida2) == false)
+                            {
+
+                                Console.WriteLine("Medida inválida");
+
+                            }
+                        } while (exercicio.Validar(medida2) == false);
+
+                        do
+                        {
+                            Console.WriteLine("Informe a primeira medida:  ");
+                            medida3 = Convert.ToInt32(Console.ReadLine());
+
+
+                            if (exercicio.Validar(medida3) == false)
+                            {
+
+                                Console.WriteLine("Medida inválida");
+
+                            }
+                        } while (exercicio.Validar(medida3) == false);
+
+                        if ((medida1 == medida2) && (medida2 == medida3))
+                        {
+                            Console.WriteLine("O triângulo é equilátero");
+                        }
+                        else if ((medida1 == medida2) || ((medida1 == medida3)) || (medida2 == medida3))
+                        {
+                            Console.WriteLine("É Isósceles");
+                        }
+                        else
+                        {
+                            Console.WriteLine("É escaleno");
+                        }
+                        break;
+
+
+                    case 15:
+                        double numpn;
+                        Console.WriteLine("Informe um número");
+                        numpn = Convert.ToDouble(Console.ReadLine());
+                        if (numpn < 0)
+                        {
+                            Console.WriteLine("O número é negativo");
+                        }
+                        else
+                        {
+                            Console.WriteLine("O número é positivo");
+                        }
+
+
+                        break;
                     default:
 
 
@@ -374,8 +574,8 @@ namespace ExerciciosLeandro
 
                 }
                 }while (ConsultarOpcao != 0) ;
-            
-           }//Fim do método
+
+            }//Fim do método
 
         }//Fim classe
      }//fim projeto
